@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    max-width: 320px;
+    width: 90%;
+}
+
+h1 {
+    color: #ff4d6d;
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    position: relative;
+    height: 80px;
+}
+
+button {
+    padding: 10px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    background: #ddd;
+    color: #333;
+    position: absolute;
+    left: 120px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Smriti 💖</h1>
+    <p>Will you be my Valentine?</p>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 💕</button>
+        <button id="noBtn">No 😜</button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+function moveNo() {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 100 - 50;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+yesBtn.onclick = () => {
+    const phoneNumber = "919406345888"; // 🔥 CHANGE THIS TO YOUR NUMBER
+    const message = encodeURIComponent(
+        "Yes, I will be your Valentine 💖🌹"
+    );
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.location.href = whatsappURL;
+};
+</script>
+
+</body>
+</html>
